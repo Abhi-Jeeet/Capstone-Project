@@ -1,3 +1,9 @@
+<?php
+include '_dbconnect.php';
+
+
+
+?>
 <!-- Modal -->
 <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginmodalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -10,7 +16,7 @@
         
       <!-- FORM -->
 
-<form action="/Php projects/Forum/partials/_handleLogin.php" method="post">
+<form action="/Capstone Project/Home1/Home2/Forum/partials/_handleLogin.php" method='POST'>
   <div class="mb-3">
     <label for="loginEmail" class="form-label">Email address</label>
     <input type="email" class="form-control" id="loginEmail" name="loginEmail" aria-describedby="emailHelp">

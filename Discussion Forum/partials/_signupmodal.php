@@ -11,7 +11,7 @@
       <!-- FORM -->
 
 
-      <form action="/Php projects/Forum/partials/_handlesignup.php" method="post">
+      <form action="/Capstone Project/Home1/Home2/Forum/partials/_handlesignup.php" method="post">
   <div class="mb-3">
     <label for="exampeInputEmail" class="form-label">Username</label>
     <input type="text" class="form-control" id="signupEmail" name="signupEmail" aria-describedby="emailHelp">

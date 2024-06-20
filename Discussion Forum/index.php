@@ -60,7 +60,7 @@
             // echo $row['category_name'];
             echo '<div class="col-md-4 my-3">
                     <div class="card" style="width: 18rem;">
-                      <img src="https://source.unsplash.com/500x300/?'.$catname.',programmer" class="card-img-top" alt="...">
+                      <img src="https://source.unsplash.com/random/500x300/?'.$catname.',programmer" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title"><a href="threads.php?catid='.$catid.'">'.$catname.'</a></h5>
                         <p class="card-text">'.substr($catdesc,0,90).'...</p>

@@ -84,12 +84,15 @@ while($row=mysqli_fetch_assoc($result)){
 
     <!-- Form -->
 
-    <div class="container my-5">
+    <?php
+    if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin']==true)){
+
+    echo '<div class="container my-5">
         <div class="card ">
             <h1 class="display-6 my-2 mx-3 mb-2">Start a Discussion!!!</h1>
             <div class="card-body my-3">
                 <h6 class="card-title">
-                    <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
+                    <form action="'.$_SERVER['REQUEST_URI'] .'" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Whats your problem??</label>
                             <input type="text" class="form-control" id="title" name="title"
@@ -105,9 +108,21 @@ while($row=mysqli_fetch_assoc($result)){
                 </h6>
             </div>
         </div>
-    </div>
+    </div>';
+    }
+    else{
+      echo '
+      <div class="container">
+      <h1>Start a Discussion!!!</h1>
+
+    <p>You are not logged in. Please login to be able to start a Discussion</p>
+    </div>';
+
+    }
 
 
+
+?>
 
 
 
@@ -123,6 +138,7 @@ while($row=mysqli_fetch_assoc($result)){
         $id=$row['thread_id'];
         $title=$row['thread_title'];
         $desc=$row['thread_desc'];
+        
         
         echo '
         <div class="container">

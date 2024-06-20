@@ -35,6 +35,8 @@
     while($row=mysqli_fetch_assoc($result)){
       $title=$row['thread_title'];
       $desc=$row['thread_desc'];
+      
+      
     }
 
 
@@ -79,9 +81,12 @@
 
 
 
-    <div class="container my-6">
+    <?php
+    if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin']==true)){
+
+    echo '    <div class="container my-6">
         <h3 class="display-6">Post a Comment</h3>
-        <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
+        <form action="'.$_SERVER['REQUEST_URI'] .'" method="post">
 
             <div class="form-floating">
                 <textarea class="form-control" placeholder="Leave a comment here" id="comment" name="comment"
@@ -93,8 +98,22 @@
     </div>
 
     <div class="container">
-        <h3 class='py-2'>Discussions</h3>
-    </div>
+        <h3 class="py-2">Discussions</h3>
+    </div>';
+    }
+    else{
+      echo '
+      <div class="container">
+      <h1>Post a Comment</h1>
+
+    <p>You are not logged in. Please login to be able to post a comment</p>
+    </div>';
+
+    }
+
+
+
+?>
 
     <?php
     //Fetching comments from the db
@@ -103,6 +122,7 @@
     $result=mysqli_query($conn,$sql);
     while($row=mysqli_fetch_assoc($result)){
       $comment=$row['comment_content'];
+      
       echo '
         <div class="container">
           <div class="d-flex my-3">
@@ -110,7 +130,7 @@
               <img src="img/userdefault.jpg" width=40px alt="...">
             </div>
             <div class="flex-grow-1 ms-3">
-              <p class="fw-bold my-0">Annonymous User</p>
+              <p class="fw-bold my-0">"Anonymous User"</p>
             
               
               '.$comment.'
