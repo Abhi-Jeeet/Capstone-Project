@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2024 at 07:17 AM
+-- Generation Time: Jul 31, 2024 at 12:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -91,17 +91,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `user_email`, `user_pass`, `timestamp`) VALUES
-(1, 'admin@admin', '$2y$10$G03cMVf1UCxwoxU19QGZv.9rmAviJll194pGjKDaIji', '2024-06-19 17:36:38'),
-(2, 'abhi@admin', '$2y$10$DfZ6LmfuCxyC.I3uJpFI3.eMIQzJYpHjVqjR44VHpUO', '2024-06-19 17:49:16'),
-(3, 'abhi@123', '$2y$10$n1ZfqX42XwsOCfvJ.rqlweW4MXD78t/wOFcWrEaF39Z', '2024-06-19 17:52:18'),
-(4, 'abhi@1234', '$2y$10$4PpEhMa5aJGkKtvhJJfAyOed3mVe8ixU0KyH2bR6pX/', '2024-06-20 00:09:29'),
-(5, 'Mohit@123', '$2y$10$foM6dt8oVoDKOdspWlIlb.DMCgwnv612vy/ClIlSVt2', '2024-06-20 10:21:57');
-
---
 -- Indexes for dumped tables
 --
 
@@ -155,7 +144,7 @@ ALTER TABLE `threads`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
